@@ -159,9 +159,9 @@ void loop() {
     ++value;
     senzorDHT();
     //snprintf(msg, MSG_BUFFER_SIZE, "temperatura #%.2f", );
-    doc["Temp"] = t;
+    doc["Temp"] = dht.readTemperature();
     //snprintf(msg1, MSG_BUFFER_SIZE, "umiditate #%.2f",);
-    doc["Umiditate"] =  h;
+    doc["Umiditate"] =  dht.readHumidity();
 
     if(iBPM > 0)
       doc["Bpm"] = sumaBPM / iBPM;
